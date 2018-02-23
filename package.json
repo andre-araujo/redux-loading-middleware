@@ -1,0 +1,48 @@
+{
+  "name": "redux-loading-middleware",
+  "version": "0.0.1",
+  "description": "A redux middleware to handle global loading",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/andre-araujo/redux-loading-middleware"
+  },
+  "author": "andre-araujo <andreluis9214@gmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "build": "./node_modules/.bin/babel src --out-dir ./dist",
+    "commit": "git-cz",
+    "lint:fix": "eslint ./src --fix",
+    "lint": "eslint ./src",
+    "test": "jest --no-cache",
+    "test:coverage": "jest --coverage"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.6.0",
+    "commitizen": "^2.9.6",
+    "cz-conventional-changelog": "^2.0.0",
+    "eslint": "^4.6.0",
+    "eslint-config-airbnb-base": "^12.0.0",
+    "eslint-plugin-import": "^2.7.0",
+    "jest": "^21.1.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "jest": {
+    "verbose": true,
+    "transformIgnorePatterns": [
+      "/node_modules/"
+    ],
+    "coverageThreshold": {
+      "global": {
+        "branches": 70,
+        "functions": 70,
+        "lines": 70,
+        "statements": 70
+      }
+    }
+  }
+}
