@@ -9,7 +9,7 @@
   "author": "andre-araujo <andreluis9214@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel src --out-dir ./dist",
+    "build": "./node_modules/.bin/babel src --out-dir ./dist --ignore **/*.spec.js",
     "commit": "git-cz",
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
