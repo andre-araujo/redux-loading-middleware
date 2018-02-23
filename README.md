@@ -16,7 +16,8 @@ Also it chains action unresolved promises that runs within 200ms threshold, and 
 ```javascript
 import { createStore, applyMiddleware } from 'redux';
 import loadingMiddleware from 'redux-loading-middleware';
-import todos from './reducers';
+import loadingReducer from 'redux-loading-middleware/loadingReducer';
+import thunk from 'redux-thunk';
 
 const initialState = {
   todos: [],
@@ -24,9 +25,8 @@ const initialState = {
 };
 
 const store = createStore(
-  todos,
-  initialState,
-  applyMiddleware(loadingMiddleware)
+  loadingReducer,
+  applyMiddleware(loadingMiddleware, thunk) // loadingMiddleware must be placed before thunk
 );
 
 export default store;

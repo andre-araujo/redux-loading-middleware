@@ -19,15 +19,26 @@ export default store => next => (action) => {
         const code = Symbol(action.name);
         loadingChain.set(code, action.name);
 
-        store.setState({ loading: true });
+        const toggleLoading = (state) => {
+            if (store.dispatch) {
+                store.dispatch({
+                    type: 'REDUX_LOADING_MIDDLEWARE',
+                    loading: state
+                });
+            } else {
+                store.setState({ loading: state });
+            }
+        }
+
+        toggleLoading(true);
 
         const loadingNextAction = new Promise((resolve, reject) => nextAction
             .then((resp) => {
-                loadingDone(code, () => store.setState({ loading: false }));
+                loadingDone(code, () => toggleLoading(false));
                 resolve(resp);
             })
             .catch((resp) => {
-                loadingDone(code, () => store.setState({ loading: false }));
+                loadingDone(code, () => toggleLoading(false));
                 reject(resp);
             }));
 
