@@ -97,4 +97,24 @@ describe('loadingMiddleware', () => {
             });
         });
     });
+
+    it('should dispatch REDUX_LOADING_MIDDLEWARE action if middleware is on redux context', (done) => {
+        actionMock = jest.fn(() => Promise.resolve('ok'));
+        storeMock = {
+            dispatch: jest.fn(),
+            setState: jest.fn(),
+        };
+
+        const loadingAction = loadingMiddleware(storeMock)(nextMock)(actionMock);
+
+        loadingAction.then((resp) => {
+            expect(resp).toBe('ok');
+            expect(storeMock.dispatch).toHaveBeenCalledWith({
+                loading: true,
+                type: 'REDUX_LOADING_MIDDLEWARE',
+            });
+            expect(storeMock.setState).not.toHaveBeenCalled();
+            done();
+        });
+    });
 });

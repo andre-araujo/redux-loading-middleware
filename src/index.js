@@ -23,12 +23,12 @@ export default store => next => (action) => {
             if (store.dispatch) {
                 store.dispatch({
                     type: 'REDUX_LOADING_MIDDLEWARE',
-                    loading: state
+                    loading: state,
                 });
             } else {
                 store.setState({ loading: state });
             }
-        }
+        };
 
         toggleLoading(true);
 
