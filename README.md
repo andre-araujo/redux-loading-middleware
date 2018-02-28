@@ -1,5 +1,7 @@
 # Redux Loading Middleware.
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/e981a86667144e13abc56389b6bc3705)](https://app.codacy.com/app/andre_luis9214/redux-loading-middleware?utm_source=github.com&utm_medium=referral&utm_content=andre-araujo/redux-loading-middleware&utm_campaign=badger)
+
 A redux middleware to handle global loading fully compatible with [redux](https://github.com/reactjs/redux) and [redux-zero](https://github.com/concretesolutions/redux-zero)
 
 ## Usage
