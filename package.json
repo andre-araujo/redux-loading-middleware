@@ -1,6 +1,6 @@
 {
   "name": "redux-loading-middleware",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A redux middleware to handle global loading",
   "repository": {
     "type": "git",
@@ -18,7 +18,7 @@
   "author": "andre-araujo <andreluis9214@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "./node_modules/.bin/babel src --out-dir ./ --ignore **/*.spec.js",
+    "build": "./node_modules/.bin/babel src --out-dir ./",
     "commit": "git-cz",
     "lint:fix": "eslint ./src --fix",
     "lint": "eslint ./src",
