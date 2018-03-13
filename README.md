@@ -2,6 +2,7 @@
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/e981a86667144e13abc56389b6bc3705)](https://app.codacy.com/app/andre_luis9214/redux-loading-middleware?utm_source=github.com&utm_medium=referral&utm_content=andre-araujo/redux-loading-middleware&utm_campaign=badger)
 [![downloads](https://img.shields.io/npm/dm/redux-loading-middleware.svg)](https://www.npmjs.com/package/redux-loading-middleware)
+[![license](https://img.shields.io/github/license/andre-araujo/redux-loading-middleware.svg)]()
 
 A redux middleware to handle global loading fully compatible with [redux](https://github.com/reactjs/redux) and [redux-zero](https://github.com/concretesolutions/redux-zero)
 
