@@ -55,3 +55,22 @@ const store = createStore(initialState, middlewares);
 export default store;
 
 ```
+
+### Skipping loading
+
+To skip loading, just set global `skipLoading` variable to true.
+To enable loading, set global `skipLoading` to false.
+
+```javascript
+// redux-zero exemple
+const actions = () => ({
+    getSomeDataFromServer: (state) => {
+        state.setState({ skipLoading: true })
+
+        return myRequest()
+            .then(() => ({ skipLoading: false }))
+            .then(resp => resp.json())
+            // ...
+    }
+}
+```

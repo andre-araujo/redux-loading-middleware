@@ -11,6 +11,7 @@ beforeEach(() => {
     nextMock = jest.fn(action => action());
     storeMock = {
         setState: jest.fn(),
+        getState: jest.fn(),
     };
 });
 
@@ -103,6 +104,7 @@ describe('loadingMiddleware', () => {
         storeMock = {
             dispatch: jest.fn(),
             setState: jest.fn(),
+            getState: jest.fn(),
         };
 
         const loadingAction = loadingMiddleware(storeMock)(nextMock)(actionMock);
